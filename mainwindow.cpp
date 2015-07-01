@@ -123,7 +123,9 @@ void MainWindow::on_pushButtonChahgePortState_clicked()
 				serialPortInterface.setParity(PAR_EVEN);
 			break;
 			case 3:
+			#ifdef Q_OS_WIN
 				serialPortInterface.setParity(PAR_MARK);
+			#endif
 			break;
 			case 4:
 				serialPortInterface.setParity(PAR_SPACE);
@@ -135,7 +137,9 @@ void MainWindow::on_pushButtonChahgePortState_clicked()
 				serialPortInterface.setStopBits(STOP_1);
 			break;
 			case 1:
+			#ifdef Q_OS_WIN
 				serialPortInterface.setStopBits(STOP_1_5);
+			#endif
 			break;
 			case 2:
 				serialPortInterface.setStopBits(STOP_2);
